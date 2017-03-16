@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>:: Key Board Event Info ::</title>
+
+    <!-- FAVICON -->
+    <link rel="shortcut icon" href="images/fav.ico" type="image/x-icon">
+</head>
+
+<body>
+    <div class="container-fluid body-wrapper">
+        <header class="row header">
+            <a href="#"><img src="images/logo.png" alt="R. Kumar - Key Board Event Info"></a>
+        </header>
+        <section class="row middle-wrapper">
+            <div class="col align-self-center">
+                <div class="key-code">--</div>
+                <div class="key-name">press any key to get the <code>keyBoardEvent</code> info</div>
+            </div>
+        </section>
+        <footer class="footer row">
+            <h1>Key Board Event Info</h1>
+            <div class="col-12 info-block">
+                <div class="row">
+                    <div class="col">
+                        <ul class="list-unstyled event-info">
+                            <li><strong data-event="altkey">altkey: </strong> -</li>
+                            <li><strong data-event="bubbles">bubbles: </strong> -</li>
+                            <li><strong data-event="cancelBubble">cancelBubble: </strong> -</li>
+                            <li><strong data-event="cancelable">cancelable: </strong> -</li>
+                            <li><strong data-event="charCode">charCode: </strong> -</li>
+                            <li><strong data-event="code">code: </strong> -</li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <ul class="list-unstyled event-info">
+                            <li><strong data-event="composed">composed: </strong> -</li>
+                            <li><strong data-event="ctrlKey">ctrlKey: </strong> -</li>
+                            <li><strong data-event="currentTarget">currentTarget: </strong> -</li>
+                            <li><strong data-event="defaultPrevented">defaultPrevented: </strong> -</li>
+                            <li><strong data-event="detail">detail: </strong> -</li>
+                            <li><strong data-event="eventPhase">eventPhase: </strong> -</li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <ul class="list-unstyled event-info">
+                            <li><strong data-event="isComposing">isComposing: </strong> -</li>
+                            <li><strong data-event="isTrusted">isTrusted: </strong> -</li>
+                            <li><strong data-event="key">key: </strong> -</li>
+                            <li><strong data-event="keyCode">keyCode: </strong> -</li>
+                            <li><strong data-event="location">location: </strong> -</li>
+                            <li><strong data-event="metaKey">metaKey: </strong> -</li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <ul class="list-unstyled event-info">
+                            <li><strong data-event="path">path: </strong> -</li>
+                            <li><strong data-event="repeat">repeat: </strong> -</li>
+                            <li><strong data-event="key">key: </strong> -</li>
+                            <li><strong data-event="keyCode">keyCode: </strong> -</li>
+                            <li><strong data-event="location">location: </strong> -</li>
+                            <li><strong data-event="metaKey">metaKey: </strong> -</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script>
+        (function () {
+            var keyCodeElem = document.querySelector('.key-code');
+            var keyCodeName = document.querySelector('.key-name');
+            function getKeyCode(e) {
+                console.log(e);
+                keyCodeElem.classList.add('active');
+                keyCodeElem.innerHTML = e.keyCode;
+                keyCodeName.innerHTML = e.code;
+            }
+            window.addEventListener('keydown', getKeyCode);
+        }())
+    </script>
+</body>
+
+</html>
