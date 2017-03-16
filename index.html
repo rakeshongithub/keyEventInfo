@@ -32,42 +32,42 @@
                 <div class="row">
                     <div class="col">
                         <ul class="list-unstyled event-info">
-                            <li><strong data-event="altkey">altkey: </strong> -</li>
-                            <li><strong data-event="bubbles">bubbles: </strong> -</li>
-                            <li><strong data-event="cancelBubble">cancelBubble: </strong> -</li>
-                            <li><strong data-event="cancelable">cancelable: </strong> -</li>
-                            <li><strong data-event="charCode">charCode: </strong> -</li>
-                            <li><strong data-event="code">code: </strong> -</li>
+                            <li data-event="altKey"><strong>altKey: </strong> <span>-</span></li>
+                            <li data-event="bubbles"><strong>bubbles: </strong> <span>-</span></li>
+                            <li data-event="cancelBubble"><strong>cancelBubble: </strong> <span>-</span></li>
+                            <li data-event="cancelable"><strong>cancelable: </strong> <span>-</span></li>
+                            <li data-event="charCode"><strong>charCode: </strong> <span>-</span></li>
+                            <li data-event="code"><strong>code: </strong> <span>-</span></li>
                         </ul>
                     </div>
                     <div class="col">
                         <ul class="list-unstyled event-info">
-                            <li><strong data-event="composed">composed: </strong> -</li>
-                            <li><strong data-event="ctrlKey">ctrlKey: </strong> -</li>
-                            <li><strong data-event="currentTarget">currentTarget: </strong> -</li>
-                            <li><strong data-event="defaultPrevented">defaultPrevented: </strong> -</li>
-                            <li><strong data-event="detail">detail: </strong> -</li>
-                            <li><strong data-event="eventPhase">eventPhase: </strong> -</li>
+                            <li data-event="composed"><strong>composed: </strong> <span>-</span></li>
+                            <li data-event="ctrlKey"><strong>ctrlKey: </strong> <span>-</span></li>
+                            <li data-event="currentTarget"><strong>currentTarget: </strong> <span>-</span></li>
+                            <li data-event="defaultPrevented"><strong>defaultPrevented: </strong> <span>-</span></li>
+                            <li data-event="detail"><strong>detail: </strong> <span>-</span></li>
+                            <li data-event="eventPhase"><strong>eventPhase: </strong> <span>-</span></li>
                         </ul>
                     </div>
                     <div class="col">
                         <ul class="list-unstyled event-info">
-                            <li><strong data-event="isComposing">isComposing: </strong> -</li>
-                            <li><strong data-event="isTrusted">isTrusted: </strong> -</li>
-                            <li><strong data-event="key">key: </strong> -</li>
-                            <li><strong data-event="keyCode">keyCode: </strong> -</li>
-                            <li><strong data-event="location">location: </strong> -</li>
-                            <li><strong data-event="metaKey">metaKey: </strong> -</li>
+                            <li data-event="isComposing"><strong>isComposing: </strong> <span>-</span></li>
+                            <li data-event="isTrusted"><strong>isTrusted: </strong> <span>-</span></li>
+                            <li data-event="key"><strong>key: </strong> <span>-</span></li>
+                            <li data-event="keyCode"><strong>keyCode: </strong> <span>-</span></li>
+                            <li data-event="location"><strong>location: </strong> <span>-</span></li>
+                            <li data-event="metaKey"><strong>metaKey: </strong> <span>-</span></li>
                         </ul>
                     </div>
                     <div class="col">
                         <ul class="list-unstyled event-info">
-                            <li><strong data-event="path">path: </strong> -</li>
-                            <li><strong data-event="repeat">repeat: </strong> -</li>
-                            <li><strong data-event="key">key: </strong> -</li>
-                            <li><strong data-event="keyCode">keyCode: </strong> -</li>
-                            <li><strong data-event="location">location: </strong> -</li>
-                            <li><strong data-event="metaKey">metaKey: </strong> -</li>
+                            <li data-event="path"><strong>path: </strong> <span>-</span></li>
+                            <li data-event="repeat"><strong>repeat: </strong> <span>-</span></li>
+                            <li data-event="returnValue"><strong>returnValue: </strong> <span>-</span></li>
+                            <li data-event="shiftKey"><strong>shiftKey: </strong> <span>-</span></li>
+                            <li data-event="type"><strong>type: </strong> <span>-</span></li>
+                            <li data-event="timeStamp"><strong>timeStamp: </strong> <span>-</span></li>
                         </ul>
                     </div>
                 </div>
@@ -78,8 +78,18 @@
         (function () {
             var keyCodeElem = document.querySelector('.key-code');
             var keyCodeName = document.querySelector('.key-name');
+            // var infoLi = ;
             function getKeyCode(e) {
-                console.log(e);
+                // console.log(e)
+                for(key in e){
+                    // console.log(key)
+                    var keyElem = document.querySelector(`.event-info li[data-event="${key}"] span`);
+                    if(keyElem){
+                        var value = e[key]
+                        keyElem.innerHTML = value instanceof Array ? value.length : value;
+                    }
+                    
+                }
                 keyCodeElem.classList.add('active');
                 keyCodeElem.innerHTML = e.keyCode;
                 keyCodeName.innerHTML = e.code;
