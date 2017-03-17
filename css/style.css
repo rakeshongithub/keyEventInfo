@@ -75,10 +75,8 @@ html, body {
     font-size: 12px;
 }
 
-.like-button-wrapper{
+.like-button-wrapper {
     position: absolute;
-    right: 0;
-    width: 100px;
-    height: 40px;
-    background: yellow;
+    right: 10px;
+    top:17px;
 }
