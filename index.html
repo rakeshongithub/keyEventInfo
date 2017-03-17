@@ -5,11 +5,13 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Key Board Event Info Tool">
 
     <!-- Bootstrap CSS -->
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <title>:: Key Board Event Info ::</title>
+    <link rel="stylesheet" href="css/style.min.css">
+    <title>Javascript Key Board Event Info</title>
 
     <!-- FAVICON -->
     <link rel="shortcut icon" href="images/fav.ico" type="image/x-icon">
@@ -74,29 +76,6 @@
             </div>
         </footer>
     </div>
-    <script>
-        (function () {
-            var keyCodeElem = document.querySelector('.key-code');
-            var keyCodeName = document.querySelector('.key-name');
-            // var infoLi = ;
-            function getKeyCode(e) {
-                // console.log(e)
-                for(key in e){
-                    // console.log(key)
-                    var keyElem = document.querySelector(`.event-info li[data-event="${key}"] span`);
-                    if(keyElem){
-                        var value = e[key]
-                        keyElem.innerHTML = value instanceof Array ? value.length : value;
-                    }
-                    
-                }
-                keyCodeElem.classList.add('active');
-                keyCodeElem.innerHTML = e.keyCode;
-                keyCodeName.innerHTML = e.code;
-            }
-            window.addEventListener('keydown', getKeyCode);
-        }())
-    </script>
+    <script src="js/key-event.min.js"></script>
 </body>
-
 </html>

@@ -1,5 +1,6 @@
 html, body {
     height: 100%;
+    font-family: 'PT Sans', sans-serif;
 }
 .margin-gap {
     margin-left: -15px;
@@ -36,6 +37,7 @@ html, body {
 
 .key-code {
     font-size: 300px;
+    font-weight: 700;
     text-align: center;
     color: #e1e1e1;
     line-height: 300px;
@@ -60,7 +62,7 @@ html, body {
 .footer h1 {
     width: 100%;
     font-size: 18px;
-    font-weight: bold;
+    font-weight: 700;
     text-align: center;
     padding: 10px 0 0;
 }
