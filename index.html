@@ -10,7 +10,7 @@
     <!-- Bootstrap CSS -->
     <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.min.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>Javascript Key Board Event Info</title>
 
     <!-- FAVICON -->
@@ -18,13 +18,28 @@
 </head>
 
 <body>
+    <div id="fb-root"></div>
+    <script>
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+
     <div class="container-fluid body-wrapper">
         <header class="row header">
             <a href="#"><img src="images/logo.png" alt="R. Kumar - Key Board Event Info"></a>
+            <div class="like-button-wrapper">
+                <div class="fb-like" data-href="https://rakeshongithub.github.io/keyEventInfo/" data-layout="button" data-action="recommend" data-size="small" data-show-faces="true" data-share="true"></div>
+            </div>
         </header>
         <section class="row middle-wrapper">
             <div class="col align-self-center">
                 <div class="key-code">--</div>
+
                 <div class="key-name">press any key to get the <code>keyBoardEvent</code> info</div>
             </div>
         </section>
@@ -76,7 +91,9 @@
             </div>
         </footer>
     </div>
+
     <script src="js/key-config.min.js"></script>
     <script src="js/key-event.min.js"></script>
 </body>
+
 </html>
