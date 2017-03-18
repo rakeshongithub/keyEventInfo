@@ -16,7 +16,7 @@ html, body {
     text-align:  center;
 }
 
-.header a {
+.header .logo-wrapper a {
     display: block;
     width: 52px;
     height: 45px;
@@ -79,4 +79,15 @@ html, body {
     position: absolute;
     right: 10px;
     top:17px;
+}
+
+.quick-contact {
+    font-size: 12px;
+    text-align: left;
+    padding-top: 18px;
+    color: #fff;
+}
+
+.quick-contact a {
+    color: #fff;
 }
